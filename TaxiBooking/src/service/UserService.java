@@ -1,5 +1,7 @@
 package service;
 
+import exceptions.InvalidCredentials;
+import exceptions.UserNotFound;
 import models.Role;
 import models.User;
 
@@ -13,8 +15,10 @@ public class UserService {
         users = new ArrayList<>();
     }
 
-    public void addUser(String userName, String email, Role role, String mobileNumber, String password){
-        users.add(new User(userName, email, role, mobileNumber, password));
+    public User addUser(String userName, String email, Role role, String mobileNumber, String password) {
+        User currentUser = new User(userName, email, role, mobileNumber, password);
+        users.add(currentUser);
+        return currentUser;
     }
 
     public void updateProfile(long userId, String userName, String email, Role role, String mobileNumber, String password) {
@@ -31,9 +35,25 @@ public class UserService {
         }
     }
 
+    public User authenticateUser(String email , String password){
+        User currentUser = findUser(email);
+        if ( currentUser == null) throw new UserNotFound();
+        if (!currentUser.getPassword().equals(password)) throw new InvalidCredentials();
+
+        return currentUser;
+    }
+
     private User findUser(long userId) {
         for (User user : users) {
             if (user.getUserId() == userId) {
+                return user;
+            }
+        }
+        return null;
+    }
+    private User findUser(String email) {
+        for (User user : users) {
+            if (user.getEmail().equalsIgnoreCase(email)) {
                 return user;
             }
         }
