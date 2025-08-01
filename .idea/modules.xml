@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Online Payment Processing System/Online Payment Processing System.iml" filepath="$PROJECT_DIR$/Online Payment Processing System/Online Payment Processing System.iml" />
       <module fileurl="file://$PROJECT_DIR$/Oops Lap.iml" filepath="$PROJECT_DIR$/Oops Lap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TicTacToe-Game/TicTacToe-Game.iml" filepath="$PROJECT_DIR$/TicTacToe-Game/TicTacToe-Game.iml" />
       <module fileurl="file://$PROJECT_DIR$/ecommerce-SOLID-principles-tutorial/ecommerce-SOLID-principles-tutorial.iml" filepath="$PROJECT_DIR$/ecommerce-SOLID-principles-tutorial/ecommerce-SOLID-principles-tutorial.iml" />
     </modules>
   </component>
